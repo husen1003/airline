@@ -1,7 +1,16 @@
-import logo from "./logo.svg";
+import { Routes, Route } from "react-router-dom";
+import routes from "./routes";
 
 function App() {
-  return <div className="text-5xl">Airline Checkin Application</div>;
+  return (
+    <>
+      <Routes>
+        {routes.map(({ Component, ...rest }) => (
+          <Route element={<Component />} {...rest} />
+        ))}
+      </Routes>
+    </>
+  );
 }
 
 export default App;
